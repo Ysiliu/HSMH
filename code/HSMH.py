@@ -1,7 +1,7 @@
 """
 类别: 算法
 名称: HSMH
-作者: 金胜杰
+作者: Ysiliu
 邮件: sj_jin@vip.hnist.edu.cn
 日期: 2023年6月26日
 说明:
