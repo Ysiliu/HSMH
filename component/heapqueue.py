@@ -1,3 +1,16 @@
+#!/usr/bin/env python3
+# *-* coding:utf8 *-*
+
+"""
+类别: 基本组件
+名称: 任务类
+作者: sjjin
+邮件: sj_jin@vip.hnist.edu.cn
+日期: 2020年3月20日
+说明: 重要的组件类
+"""
+
+
 import heapq
 from typing import List, Optional
 from component.flow import Flow
@@ -6,7 +19,7 @@ class EDFHeapQueue:
     def __init__(self, num: int):
         self.num = num
         self.queue = []
-        self.entry_count = 0  # 用于解决具有相同优先级的flow之间的比较问题
+        self.entry_count = 0
 
     def enqueue(self, flow: Flow):
         if len(self.queue) < self.num:
@@ -41,7 +54,7 @@ class STFHeapQueue:
     def __init__(self, num: int):
         self.num = num
         self.queue = []
-        self.entry_count = 0  # 用于解决具有相同优先级的flow之间的比较问题
+        self.entry_count = 0
 
     def enqueue(self, flow: Flow):
         if len(self.queue) < self.num:

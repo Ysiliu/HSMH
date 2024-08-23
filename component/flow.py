@@ -30,9 +30,9 @@ class Flow(object):
                  jitter: int):
         self.id = id
         self.name = name
-        self.type = type  # 流类型
-        self.src = src  # 流发送端
-        self.dst = dst  # 流接收端
+        self.type = type
+        self.src = src
+        self.dst = dst
         self.size = size
         self.period = period
         self.deadline = deadline

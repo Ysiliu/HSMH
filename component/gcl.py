@@ -1,6 +1,18 @@
+#!/usr/bin/env python3
+# *-* coding:utf8 *-*
+
+"""
+类别: 基本组件
+名称: 任务类
+作者: sjjin
+邮件: sj_jin@vip.hnist.edu.cn
+日期: 2020年3月20日
+说明: 重要的组件类
+"""
+
 from typing import List, Tuple
 from enum import Enum
-from config.config import NUM_QUEUE
+from config.config import MAX_NUM_QUEUE
 
 import pandas as pd
 
@@ -14,10 +26,10 @@ class GCL:
     def __init__(self):
         self.gcl_entries = []
         self.cycle_time = 3000
-
+        self.is_guard= False
+        self.guard_time=[(0,100,[1,1,1,1])]
 
     def load_gcl_from_dataframe(self, gcl_df: pd.DataFrame):
-        # 读取 DataFrame 中的 GCL 条目
         for _, row in gcl_df.iterrows():
             start_time = row['start_time']
             end_time = row['end_time']
@@ -25,20 +37,17 @@ class GCL:
             self.gcl_entries.append((start_time, end_time, gate_states))
 
     def get_gate_state_at_time(self, time: int):
-        # 将时间归一化到一个周期内
         time_in_cycle = time % self.cycle_time
 
         for start_time, end_time, gate_states in self.gcl_entries:
             if start_time <= time_in_cycle < end_time:
                 return gate_states
-        return None  # 在该时间点未找到有效的GCL条目
+        return None
 
     def is_queue_open(self, time: int, queue_index: int) -> bool:
-        # 获取指定时间点的门状态
         gate_states = self.get_gate_state_at_time(time)
         if gate_states is None:
-            return False  # 如果没有找到有效的GCL条目，默认为关闭状态
-        # 返回指定队列的门的状态
+            return False
         return gate_states[queue_index] == GateState.OPEN
 
 
@@ -56,7 +65,6 @@ if __name__ == "__main__":
 
 
     gcl_df = pd.DataFrame(gcl_data)
-    # 设置GCL周期时间
     cycle_time = 3000
 
     gcl = GCL()
@@ -68,3 +76,5 @@ if __name__ == "__main__":
 
     print(f"At time=3500, the gate state is: {state_at_3500}")
     print(f"At time=3500, the gate state is: {gcl.is_queue_open(3500,0)}")
+    print(gcl.gcl_entries[0])
+    print(gcl.guard_time)

@@ -10,7 +10,7 @@
 说明: 重要的组件类
 """
 from enum import Enum
-from config.config import NUM_QUEUE,NUM_PORT
+from config.config import MAX_NUM_QUEUE,MAX_NUM_PORT
 
 class NodeType(Enum):
     sw = 0
@@ -20,7 +20,7 @@ class Node(int):
     def __init__(self, id: int, type: NodeType) -> None:
         self.id = id
         self.type = type
-        self.num_port = NUM_QUEUE
-        self.num_queue = NUM_PORT
+        self.num_port = MAX_NUM_QUEUE
+        self.num_queue = MAX_NUM_PORT
 
 

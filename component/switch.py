@@ -1,3 +1,15 @@
+#!/usr/bin/env python3
+# *-* coding:utf8 *-*
+
+"""
+类别: 基本组件
+名称: 任务类
+作者: sjjin
+邮件: sj_jin@vip.hnist.edu.cn
+日期: 2020年3月20日
+说明: 重要的组件类
+"""
+
 
 import pandas as pd
 from component.port import Port
@@ -6,12 +18,12 @@ from component.routetable import RoutingTable
 
 
 class Switch:
-    def __init__(self):
-        self.name = ''
-        self.addr = 0
+    def __init__(self,name:str,addr:int,ports,routing_table):
+        self.name = name
+        self.addr = addr
         self.num_ports = 4
-        self.ports = []
-        self.routing_table = RoutingTable()
+        self.ports = ports
+        self.routing_table = routing_table
         # self.links = [Link()]
         self.flow_log=[]
     # def flow_in(self, flow: Flow, time: int) -> bool:

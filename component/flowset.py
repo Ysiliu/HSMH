@@ -1,3 +1,14 @@
+#!/usr/bin/env python3
+# *-* coding:utf8 *-*
+
+"""
+类别: 基本组件
+名称: 任务类
+作者: sjjin
+邮件: sj_jin@vip.hnist.edu.cn
+日期: 2020年3月20日
+说明: 重要的组件类
+"""
 import pandas as pd
 from typing import List, Optional
 from enum import Enum
@@ -62,6 +73,5 @@ class FlowSet:
 
 if __name__ == "__main__":
 
-    # 示例用法
     flow_set = FlowSet.from_csv('flows.csv')
     print(flow_set)
