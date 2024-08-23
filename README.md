@@ -4,6 +4,6 @@ component: various components that are used to build a tsn network, including sw
 
 config: config.py contains some parameters used by a network.
 
-data: generate_data.py is used to randomly generate some flow data in a network.
+data: generate_data.py is used to randomly generate flow data in a network.
 
 simulation: simulation_BT.py, simulation_PASA.py, simulation_EDF.py, and simulation_HSMH.py denote the four algorithms described in the paper, respectively.
