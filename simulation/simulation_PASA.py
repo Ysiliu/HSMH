@@ -1,3 +1,12 @@
+#!/usr/bin/env python3
+# *-* coding:utf8 *-*
+
+"""
+作者: sjjin
+邮件: sj_jin@vip.hnist.edu.cn
+日期: 2022年12月20日
+"""
+
 from typing import List
 import pandas as pd
 from component.gcl import GCL
