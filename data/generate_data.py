@@ -36,7 +36,6 @@ def generate_random_flows(num_flows: int,
         flows.append(flow)
     return flows
 
-# 使用示例
 flows = generate_random_flows(
     num_flows=10,
     type_range=[FlowType.avb_a, FlowType.avb_b, FlowType.be],
