@@ -1,13 +1,7 @@
 #!/usr/bin/env python3
 # *-* coding:utf8 *-*
 
-"""
-类别: 基本组件
-作者: sjjin
-邮件: sj_jin@vip.hnist.edu.cn
-日期: 2022年12月20日
-说明: 重要的组件类
-"""
+
 
 import pandas as pd
 from typing import List, Optional
