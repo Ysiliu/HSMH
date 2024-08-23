@@ -3,12 +3,12 @@
 
 """
 类别: 基本组件
-名称: 任务类
 作者: sjjin
 邮件: sj_jin@vip.hnist.edu.cn
-日期: 2020年3月20日
+日期: 2022年12月20日
 说明: 重要的组件类
 """
+
 from enum import Enum
 from config.config import MAX_NUM_QUEUE,MAX_NUM_PORT
 
